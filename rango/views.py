@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse 
 
-# Create your views here.
+
+# each view returns an http response object
+# after creating a view, map it using urls.py, where each url 
+
+# Below are the views 
+
+# request is an HttpRequest
+def index(request):
+    return HttpResponse("Rango says hey there partner!")
