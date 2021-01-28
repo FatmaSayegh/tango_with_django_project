@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 from rango import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index, name='index'), # name is optional, useful for referencing pater on
+    path('rango/', include('rango.urls')), # anything with rango/ is managed by the the rango app
     path('admin/', admin.site.urls),
 ]
