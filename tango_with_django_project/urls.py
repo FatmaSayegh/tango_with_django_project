@@ -26,4 +26,4 @@ urlpatterns = [
     path('', views.index, name='index'), # name is optional, useful for referencing pater on
     path('rango/', include('rango.urls')), # anything with rango/ is managed by the the rango app
     path('admin/', admin.site.urls),
-] + static(setting.MEDIA_URL, document_root=setting.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
