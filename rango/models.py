@@ -5,7 +5,8 @@ from django.template.defaultfilters import slugify
 
 # this is a table called category that has a name as a key, it is unique
 class Category(models.Model):
-    name = models.CharField(max_length=128, unique=True)
+    NAME_SIZE = 128
+    name = models.CharField(max_length=NAME_SIZE, unique=True)
     likes = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
