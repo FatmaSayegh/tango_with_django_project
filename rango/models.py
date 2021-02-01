@@ -7,6 +7,7 @@ class Category(models.Model):
     name = models.CharField(max_length=128, unique=True)
     likes = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
+    
     class Meta:
         verbose_name_plural = 'Categories'
     def __str__(self):
