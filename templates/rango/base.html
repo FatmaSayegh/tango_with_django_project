@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
+{% load staticfiles %}
+{% load rango_template_tags %}
+
 <!--
 Blocks:
 
 1. title_block
-2. 
+2. body_block
 -->
-{% load staticfiles %}
 <html>
     
     <head>
@@ -18,6 +20,12 @@ Blocks:
             This is body_block's default content.
         {% endblock %}
         <hr/>
+        <div>
+            {% block sidebar_block %}
+                {% get_category_list category%}
+            {% endblock %}
+        </div>
+        
          <div>
              <ul>
                  <li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>
