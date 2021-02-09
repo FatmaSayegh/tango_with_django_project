@@ -24,7 +24,6 @@ def index(request):
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = pages_list
-    
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
@@ -63,7 +62,7 @@ def add_category(request):
         saved_object = form.save(commit=True)
         # Now that the category is saved, we could confirm this.
         # For now, just redirect the user back to the index view.
-        return redirect('/rango/')
+        return redirect(reverse('rango:index'))
     else:
     # The supplied form contained errors -
         print(form.errors)
@@ -77,7 +76,7 @@ def add_page(request, category_name_slug):
         category = None
         
     if category is None:
-        return redirect('/rango/')
+        return redirect(reverse('rango:index'))
     
     form = PageForm()
     
