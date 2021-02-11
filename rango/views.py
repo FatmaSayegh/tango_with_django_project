@@ -29,6 +29,7 @@ def index(request):
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = pages_list
+    # keep it so it increments even if user never vists about page
     visitor_cookie_handler(request)
     return render(request, 'rango/index.html', context=context_dict)
 
