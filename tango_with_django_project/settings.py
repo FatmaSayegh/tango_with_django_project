@@ -15,6 +15,11 @@ import os
 # adding @login_required() decorator above any view will redirect to here in case not logged in
 LOGIN_URL = 'rango:login'
 
+# sessions
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 172800 # 2 days
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
