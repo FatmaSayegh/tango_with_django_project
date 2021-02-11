@@ -29,15 +29,13 @@ def index(request):
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = pages_list
-
     visitor_cookie_handler(request)
-    context_dict['visits'] = request.session['visits']
-    
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
-
-    return render(request, 'rango/about.html')
+    visitor_cookie_handler(request)
+    context_dict = {'visits': request.session['visits']}
+    return render(request, 'rango/about.html', context_dict)
 
 def show_category(request, category_name_slug):
     context_dict = {}
